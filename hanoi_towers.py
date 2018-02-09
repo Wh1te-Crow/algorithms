@@ -5,20 +5,10 @@ def moveTower(height,fromPole,toPole,withPole,array):
         moveTower(height-1,withPole,toPole,fromPole,array)
 
 def moveDisk(fp,tp,array):
-    if (fp=="A"):
-        array[0]-=1
-    elif (fp=="B"):
-        array[1]-=1
-    else:
-        array[2]-=1
-    if (tp=="A"):
-        array[0]+=1
-    elif (tp=="B"):
-        array[1]+=1
-    else:
-        array[2]+=1    
-    print("moving disk from",fp,"to",tp,array)
+    array[['A','B','C'].index(fp)]-=1
+    array[['A','B','C'].index(tp)]+=1
+    print "moving disk from",fp,"to",tp,array
 
 
-moveTower(5,"A","C","B",[5,0,0])
+moveTower(6,"A","C","B",[6,0,0])
     
